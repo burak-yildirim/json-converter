@@ -1,0 +1,22 @@
+@using ConvertJson.Extensions;
+@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<img src="https://http.cat/@Model.StatusCode" />
+
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">An error occurred while processing your request.</h2>
+
+
+@if (Model.IsDevelopment)
+{
+    <p><strong>NOTE:</strong> Application is running in <strong>Development Mode</strong>!</p>
+    <p>@Model.ErrorMessage</p>
+
+    @foreach (var line in (Model.Exception?.ToString() ?? "").SplitToLines())
+    {
+        <span>@line</span> <br>
+    }
+}

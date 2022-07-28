@@ -1,0 +1,11 @@
+@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<img src="https://http.cat/@Model.StatusCode" />
+
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">An error occurred while processing your request.</h2>
+
+<p>@Model.ErrorMessage</p>
